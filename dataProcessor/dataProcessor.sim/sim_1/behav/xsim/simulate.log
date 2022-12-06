@@ -1,0 +1,45 @@
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+$stop called at time : 800050 ns : File "/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv" Line 99
+WARNING: File descriptor (-19999) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 137 is not valid.
+WARNING: File descriptor (-19998) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 138 is not valid.
+WARNING: File descriptor (-19999) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 137 is not valid.
+WARNING: File descriptor (-19998) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 138 is not valid.
+WARNING: File descriptor (-19999) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 137 is not valid.
+WARNING: File descriptor (-19998) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 138 is not valid.
+WARNING: File descriptor (-19999) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 137 is not valid.
+WARNING: File descriptor (-19998) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 138 is not valid.
+WARNING: File descriptor (-19999) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 137 is not valid.
+WARNING: File descriptor (-19998) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 138 is not valid.
+WARNING: File descriptor (-19999) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 137 is not valid.
+WARNING: File descriptor (-19998) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 138 is not valid.
+WARNING: File descriptor (-19999) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 137 is not valid.
+WARNING: File descriptor (-19998) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 138 is not valid.
+WARNING: File descriptor (-19999) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 137 is not valid.
+WARNING: File descriptor (-19998) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 138 is not valid.
+WARNING: File descriptor (-19999) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 137 is not valid.
+WARNING: File descriptor (-19998) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 138 is not valid.
+WARNING: File descriptor (-19999) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 137 is not valid.
+WARNING: File descriptor (-19998) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 138 is not valid.
+WARNING: File descriptor (-19999) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 137 is not valid.
+WARNING: File descriptor (-19998) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 138 is not valid.
+WARNING: File descriptor (-19999) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 137 is not valid.
+WARNING: File descriptor (-19998) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 138 is not valid.
+WARNING: File descriptor (-19999) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 137 is not valid.
+WARNING: File descriptor (-19998) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 138 is not valid.
+WARNING: File descriptor (-19999) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 137 is not valid.
+WARNING: File descriptor (-19998) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 138 is not valid.
+WARNING: File descriptor (-19999) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 137 is not valid.
+WARNING: File descriptor (-19998) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 138 is not valid.
+WARNING: File descriptor (-19999) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 137 is not valid.
+WARNING: File descriptor (-19998) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 138 is not valid.
+WARNING: File descriptor (-19999) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 137 is not valid.
+WARNING: File descriptor (-19998) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 138 is not valid.
+WARNING: File descriptor (-19999) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 137 is not valid.
+WARNING: File descriptor (-19998) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 138 is not valid.
+WARNING: File descriptor (-19999) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 137 is not valid.
+WARNING: File descriptor (-19998) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 138 is not valid.
+WARNING: File descriptor (-19999) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 137 is not valid.
+WARNING: File descriptor (-19998) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 138 is not valid.
+WARNING: File descriptor (-19999) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 137 is not valid.
+WARNING: File descriptor (-19998) passed to $fwrite in file /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv at line 138 is not valid.

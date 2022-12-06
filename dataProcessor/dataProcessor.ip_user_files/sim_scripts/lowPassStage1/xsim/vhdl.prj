@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../ip/lowPassStage1/sim/lowPassStage1.vhd" \
+
+nosort

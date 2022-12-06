@@ -1,0 +1,37 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Wed Dec  7 00:53:04 2022
+| Host         : soganli-G3-3579 running 64-bit Ubuntu 18.04.6 LTS
+| Command      : upgrade_ip
+| Device       : xcku11p-ffvd900-2-i
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'lowPassStage2'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of lowPassStage2 (xilinx.com:ip:fir_compiler:7.2 (Rev. 15)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Wed Dec  7 00:53:03 2022
+| Host         : soganli-G3-3579 running 64-bit Ubuntu 18.04.6 LTS
+| Command      : upgrade_ip
+| Device       : xcku11p-ffvd900-2-i
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'lowPassStage1'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of lowPassStage1 (xilinx.com:ip:fir_compiler:7.2 (Rev. 15)) to Vivado generation flows.
+

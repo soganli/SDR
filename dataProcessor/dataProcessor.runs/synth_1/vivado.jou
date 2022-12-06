@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Dec  7 00:53:36 2022
+# Process ID: 3568
+# Current directory: /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.runs/synth_1
+# Command line: vivado -log dataProcessor.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source dataProcessor.tcl
+# Log file: /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.runs/synth_1/dataProcessor.vds
+# Journal file: /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source dataProcessor.tcl -notrace

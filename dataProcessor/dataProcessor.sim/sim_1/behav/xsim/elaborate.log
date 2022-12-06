@@ -1,0 +1,106 @@
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto fc46981a62ae4671b821c9ca1f102e2d --incr --debug typical --relax --mt 8 -L xil_defaultlib -L xbip_utils_v3_0_10 -L axi_utils_v2_0_6 -L fir_compiler_v7_2_15 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot dataProcessor_tb_behav xil_defaultlib.dataProcessor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-8389] size mismatch in mixed language port association, VHDL port 'm_axis_data_tdata' [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/new/dataProcessor.sv:83]
+WARNING: [VRFC 10-8389] size mismatch in mixed language port association, VHDL port 'm_axis_data_tdata' [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/new/dataProcessor.sv:93]
+WARNING: [VRFC 10-8389] size mismatch in mixed language port association, VHDL port 'm_axis_data_tdata' [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/new/dataProcessor.sv:144]
+WARNING: [VRFC 10-8389] size mismatch in mixed language port association, VHDL port 'm_axis_data_tdata' [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/new/dataProcessor.sv:156]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package xbip_utils_v3_0_10.xbip_utils_v3_0_10_pkg
+Compiling package fir_compiler_v7_2_15.fir_compiler_v7_2_15_viv_comp
+Compiling package ieee.std_logic_textio
+Compiling package fir_compiler_v7_2_15.globals_pkg
+Compiling package fir_compiler_v7_2_15.components
+Compiling package ieee.math_real
+Compiling package axi_utils_v2_0_6.global_util_pkg
+Compiling package axi_utils_v2_0_6.axi_utils_comps
+Compiling package unisim.vcomponents
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling module xil_defaultlib.digitalDownConverter
+Compiling architecture xilinx of entity axi_utils_v2_0_6.glb_srl_fifo [\glb_srl_fifo(width=16,has_ifx=t...]
+Compiling architecture xilinx of entity axi_utils_v2_0_6.glb_ifx_slave [\glb_ifx_slave(width=16,has_ifx=...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.cntrl_delay [\cntrl_delay(c_delay_len=0,c_mem...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.sp_mem [\sp_mem(c_xdevicefamily="kintexu...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.sp_mem [\sp_mem(c_xdevicefamily="kintexu...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.filt_mem [\filt_mem(c_xdevicefamily="kinte...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.sp_mem [\sp_mem(c_xdevicefamily="kintexu...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.sp_mem [\sp_mem(c_xdevicefamily="kintexu...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.filt_mem [\filt_mem(c_xdevicefamily="kinte...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=64,c_xdevicef...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.buff [\buff(c_xdevicefamily="kintexupl...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=3,c_xdevicefa...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=2,c_xdevicefa...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=0,c_xdevicefa...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=65,c_xdevicef...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.buff [\buff(c_xdevicefamily="kintexupl...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=0,c_xdevicefa...]
+Compiling architecture dsp48e2_v of entity unisim.DSP48E2 [\DSP48E2(amultsel="AD",mask="111...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.calc [\calc(c_xdevicefamily="kintexupl...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.addsub_mult_add [\addsub_mult_add(c_xdevicefamily...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.addsub_mult_add [\addsub_mult_add(c_xdevicefamily...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=0,c_xdevicefa...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.addsub_mult_add [\addsub_mult_add(c_xdevicefamily...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.dpr_mem [\dpr_mem(c_xdevicefamily="kintex...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=1,c_xdevicefa...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=1,c_xdevicefa...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.wrap_buff [\wrap_buff(c_xdevicefamily="kint...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=0,c_xdevicefa...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=0,c_xdevicefa...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=1,c_xdevicefa...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=0,c_xdevicefa...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=1,c_xdevicefa...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=0,c_xdevicefa...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=5,c_xdevicefa...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=7,c_xdevicefa...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.polyphase_decimation [\polyphase_decimation(c_xdevicef...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.fir_compiler_v7_2_15_viv [\fir_compiler_v7_2_15_viv(c_xdev...]
+Compiling architecture xilinx of entity fir_compiler_v7_2_15.fir_compiler_v7_2_15 [\fir_compiler_v7_2_15(c_xdevicef...]
+Compiling architecture lowpassstage1_arch of entity xil_defaultlib.lowPassStage1 [lowpassstage1_default]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=0,c_xdevicefa...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=1,c_xdevicefa...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=2,c_xdevicefa...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=1,c_xdevicefa...]
+Compiling architecture xilinx of entity axi_utils_v2_0_6.glb_srl_fifo [\glb_srl_fifo(width=9,has_ifx=tr...]
+Compiling architecture xilinx of entity axi_utils_v2_0_6.glb_ifx_slave [\glb_ifx_slave(width=9,has_ifx=t...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.cnfg_and_reload [\cnfg_and_reload(c_xdevicefamily...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=2,c_xdevicefa...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=4,c_xdevicefa...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.dpt_mem [\dpt_mem(c_xdevicefamily="kintex...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.filt_mem [\filt_mem(c_xdevicefamily="kinte...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.sp_mem [\sp_mem(c_xdevicefamily="kintexu...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.filt_mem [\filt_mem(c_xdevicefamily="kinte...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.cntrl_delay [\cntrl_delay(c_delay_len=0,c_mem...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.wrap_buff [\wrap_buff(c_xdevicefamily="kint...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=0,c_xdevicefa...]
+Compiling architecture dsp48e2_v of entity unisim.DSP48E2 [\DSP48E2(amultsel="AD",mask="111...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.calc [\calc(c_xdevicefamily="kintexupl...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.addsub_mult_accum [\addsub_mult_accum(c_xdevicefami...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=0,c_xdevicefa...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=5,c_xdevicefa...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=1,c_xdevicefa...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=2,c_xdevicefa...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=1,c_xdevicefa...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=3,c_xdevicefa...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=8,c_xdevicefa...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=10,c_xdevicef...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.polyphase_decimation [\polyphase_decimation(c_xdevicef...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.fir_compiler_v7_2_15_viv [\fir_compiler_v7_2_15_viv(c_xdev...]
+Compiling architecture xilinx of entity fir_compiler_v7_2_15.fir_compiler_v7_2_15 [\fir_compiler_v7_2_15(c_xdevicef...]
+Compiling architecture lowpassstage2_arch of entity xil_defaultlib.lowPassStage2 [lowpassstage2_default]
+Compiling module xil_defaultlib.dataProcessor
+Compiling module xil_defaultlib.dataProcessor_tb
+WARNING: [XSIM 43-3373] "/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv" Line 82. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot dataProcessor_tb_behav

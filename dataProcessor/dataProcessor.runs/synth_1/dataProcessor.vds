@@ -1,0 +1,439 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Dec  7 00:53:36 2022
+# Process ID: 3568
+# Current directory: /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.runs/synth_1
+# Command line: vivado -log dataProcessor.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source dataProcessor.tcl
+# Log file: /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.runs/synth_1/dataProcessor.vds
+# Journal file: /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source dataProcessor.tcl -notrace
+Command: synth_design -top dataProcessor -part xcku11p-ffvd900-2-i
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xcku11p'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcku11p'
+INFO: [Device 21-403] Loading part xcku11p-ffvd900-2-i
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 3603
+CRITICAL WARNING: [Synth 8-976] s_axis_config_r_tready has already been declared [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/new/dataProcessor.sv:109]
+CRITICAL WARNING: [Synth 8-2654] second declaration of s_axis_config_r_tready ignored [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/new/dataProcessor.sv:109]
+INFO: [Synth 8-6826] previous declaration of 's_axis_config_r_tready' is from here [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/new/dataProcessor.sv:109]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 2786.617 ; gain = 78.715 ; free physical = 9916 ; free virtual = 20806
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'dataProcessor' [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/new/dataProcessor.sv:23]
+	Parameter D_WIDTH bound to: 16 - type: integer 
+	Parameter B_WIDTH bound to: 16 - type: integer 
+	Parameter DATA_RATIO bound to: 1 - type: integer 
+	Parameter FILTER_TYPE bound to: 1 - type: integer 
+	Parameter DECIMATION_NUMBER bound to: 128 - type: integer 
+	Parameter INTERPOLATION_NUMBER bound to: 1 - type: integer 
+	Parameter FILTER_LENGTH bound to: 511 - type: integer 
+	Parameter FILTER_IS_SYMMETRIC bound to: 0 - type: integer 
+	Parameter A_WIDTH bound to: 16 - type: integer 
+	Parameter O_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'digitalDownConverter' [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/new/digitalDownConverter.sv:23]
+	Parameter D_WIDTH bound to: 16 - type: integer 
+	Parameter B_WIDTH bound to: 16 - type: integer 
+	Parameter COEF_LEN bound to: 5000 - type: integer 
+	Parameter ROUND_COEF bound to: 8192 - type: integer 
+INFO: [Synth 8-3876] $readmem data file 'ddcCoefficients_real.mem' is read successfully [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/new/digitalDownConverter.sv:50]
+INFO: [Synth 8-3876] $readmem data file 'ddcCoefficients_imag.mem' is read successfully [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/new/digitalDownConverter.sv:51]
+INFO: [Synth 8-6155] done synthesizing module 'digitalDownConverter' (1#1) [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/new/digitalDownConverter.sv:23]
+INFO: [Synth 8-638] synthesizing module 'lowPassStage1' [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage1/synth/lowPassStage1.vhd:70]
+	Parameter C_XDEVICEFAMILY bound to: kintexuplus - type: string 
+	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
+	Parameter C_COMPONENT_NAME bound to: lowPassStage1 - type: string 
+	Parameter C_COEF_FILE bound to: lowPassStage1.mif - type: string 
+	Parameter C_COEF_FILE_LINES bound to: 256 - type: integer 
+	Parameter C_FILTER_TYPE bound to: 1 - type: integer 
+	Parameter C_INTERP_RATE bound to: 1 - type: integer 
+	Parameter C_DECIM_RATE bound to: 64 - type: integer 
+	Parameter C_ZERO_PACKING_FACTOR bound to: 1 - type: integer 
+	Parameter C_SYMMETRY bound to: 1 - type: integer 
+	Parameter C_NUM_FILTS bound to: 1 - type: integer 
+	Parameter C_NUM_TAPS bound to: 512 - type: integer 
+	Parameter C_NUM_CHANNELS bound to: 1 - type: integer 
+	Parameter C_CHANNEL_PATTERN bound to: fixed - type: string 
+	Parameter C_ROUND_MODE bound to: 6 - type: integer 
+	Parameter C_COEF_RELOAD bound to: 0 - type: integer 
+	Parameter C_NUM_RELOAD_SLOTS bound to: 1 - type: integer 
+	Parameter C_COL_MODE bound to: 1 - type: integer 
+	Parameter C_COL_PIPE_LEN bound to: 4 - type: integer 
+	Parameter C_COL_CONFIG bound to: 4 - type: string 
+	Parameter C_OPTIMIZATION bound to: 0 - type: integer 
+	Parameter C_DATA_PATH_WIDTHS bound to: 16 - type: string 
+	Parameter C_DATA_IP_PATH_WIDTHS bound to: 16 - type: string 
+	Parameter C_DATA_PX_PATH_WIDTHS bound to: 16 - type: string 
+	Parameter C_DATA_WIDTH bound to: 16 - type: integer 
+	Parameter C_COEF_PATH_WIDTHS bound to: 16 - type: string 
+	Parameter C_COEF_WIDTH bound to: 16 - type: integer 
+	Parameter C_DATA_PATH_SRC bound to: 0 - type: string 
+	Parameter C_COEF_PATH_SRC bound to: 0 - type: string 
+	Parameter C_PX_PATH_SRC bound to: 0 - type: string 
+	Parameter C_DATA_PATH_SIGN bound to: 0 - type: string 
+	Parameter C_COEF_PATH_SIGN bound to: 0 - type: string 
+	Parameter C_ACCUM_PATH_WIDTHS bound to: 39 - type: string 
+	Parameter C_OUTPUT_WIDTH bound to: 16 - type: integer 
+	Parameter C_OUTPUT_PATH_WIDTHS bound to: 16 - type: string 
+	Parameter C_ACCUM_OP_PATH_WIDTHS bound to: 39 - type: string 
+	Parameter C_EXT_MULT_CNFG bound to: none - type: string 
+	Parameter C_DATA_PATH_PSAMP_SRC bound to: 0 - type: string 
+	Parameter C_OP_PATH_PSAMP_SRC bound to: 0 - type: string 
+	Parameter C_NUM_MADDS bound to: 4 - type: integer 
+	Parameter C_OPT_MADDS bound to: none - type: string 
+	Parameter C_OVERSAMPLING_RATE bound to: 1 - type: integer 
+	Parameter C_INPUT_RATE bound to: 1 - type: integer 
+	Parameter C_OUTPUT_RATE bound to: 64 - type: integer 
+	Parameter C_DATA_MEMTYPE bound to: 0 - type: integer 
+	Parameter C_COEF_MEMTYPE bound to: 2 - type: integer 
+	Parameter C_IPBUFF_MEMTYPE bound to: 2 - type: integer 
+	Parameter C_OPBUFF_MEMTYPE bound to: 0 - type: integer 
+	Parameter C_DATAPATH_MEMTYPE bound to: 2 - type: integer 
+	Parameter C_MEM_ARRANGEMENT bound to: 1 - type: integer 
+	Parameter C_DATA_MEM_PACKING bound to: 0 - type: integer 
+	Parameter C_COEF_MEM_PACKING bound to: 0 - type: integer 
+	Parameter C_FILTS_PACKED bound to: 0 - type: integer 
+	Parameter C_LATENCY bound to: 10 - type: integer 
+	Parameter C_HAS_ARESETn bound to: 0 - type: integer 
+	Parameter C_HAS_ACLKEN bound to: 0 - type: integer 
+	Parameter C_DATA_HAS_TLAST bound to: 0 - type: integer 
+	Parameter C_S_DATA_HAS_FIFO bound to: 1 - type: integer 
+	Parameter C_S_DATA_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_S_DATA_TDATA_WIDTH bound to: 16 - type: integer 
+	Parameter C_S_DATA_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_DATA_HAS_TREADY bound to: 0 - type: integer 
+	Parameter C_M_DATA_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_M_DATA_TDATA_WIDTH bound to: 16 - type: integer 
+	Parameter C_M_DATA_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_CONFIG_CHANNEL bound to: 0 - type: integer 
+	Parameter C_CONFIG_SYNC_MODE bound to: 0 - type: integer 
+	Parameter C_CONFIG_PACKET_SIZE bound to: 0 - type: integer 
+	Parameter C_CONFIG_TDATA_WIDTH bound to: 1 - type: integer 
+	Parameter C_RELOAD_TDATA_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'fir_compiler_v7_2_15' declared at '/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage2/hdl/fir_compiler_v7_2_vh_rfs.vhd:67113' bound to instance 'U0' of component 'fir_compiler_v7_2_15' [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage1/synth/lowPassStage1.vhd:198]
+INFO: [Synth 8-256] done synthesizing module 'lowPassStage1' (16#1) [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage1/synth/lowPassStage1.vhd:70]
+WARNING: [Synth 8-689] width (32) of port connection 'm_axis_data_tdata' does not match port width (16) of module 'lowPassStage1' [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/new/dataProcessor.sv:90]
+WARNING: [Synth 8-689] width (32) of port connection 'm_axis_data_tdata' does not match port width (16) of module 'lowPassStage1' [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/new/dataProcessor.sv:100]
+INFO: [Synth 8-638] synthesizing module 'lowPassStage2' [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage2/synth/lowPassStage2.vhd:73]
+	Parameter C_XDEVICEFAMILY bound to: kintexuplus - type: string 
+	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
+	Parameter C_COMPONENT_NAME bound to: lowPassStage2 - type: string 
+	Parameter C_COEF_FILE bound to: lowPassStage2.mif - type: string 
+	Parameter C_COEF_FILE_LINES bound to: 2048 - type: integer 
+	Parameter C_FILTER_TYPE bound to: 1 - type: integer 
+	Parameter C_INTERP_RATE bound to: 1 - type: integer 
+	Parameter C_DECIM_RATE bound to: 64 - type: integer 
+	Parameter C_ZERO_PACKING_FACTOR bound to: 1 - type: integer 
+	Parameter C_SYMMETRY bound to: 1 - type: integer 
+	Parameter C_NUM_FILTS bound to: 4 - type: integer 
+	Parameter C_NUM_TAPS bound to: 768 - type: integer 
+	Parameter C_NUM_CHANNELS bound to: 1 - type: integer 
+	Parameter C_CHANNEL_PATTERN bound to: fixed - type: string 
+	Parameter C_ROUND_MODE bound to: 6 - type: integer 
+	Parameter C_COEF_RELOAD bound to: 0 - type: integer 
+	Parameter C_NUM_RELOAD_SLOTS bound to: 1 - type: integer 
+	Parameter C_COL_MODE bound to: 1 - type: integer 
+	Parameter C_COL_PIPE_LEN bound to: 4 - type: integer 
+	Parameter C_COL_CONFIG bound to: 1 - type: string 
+	Parameter C_OPTIMIZATION bound to: 0 - type: integer 
+	Parameter C_DATA_PATH_WIDTHS bound to: 16 - type: string 
+	Parameter C_DATA_IP_PATH_WIDTHS bound to: 16 - type: string 
+	Parameter C_DATA_PX_PATH_WIDTHS bound to: 16 - type: string 
+	Parameter C_DATA_WIDTH bound to: 16 - type: integer 
+	Parameter C_COEF_PATH_WIDTHS bound to: 16 - type: string 
+	Parameter C_COEF_WIDTH bound to: 16 - type: integer 
+	Parameter C_DATA_PATH_SRC bound to: 0 - type: string 
+	Parameter C_COEF_PATH_SRC bound to: 0 - type: string 
+	Parameter C_PX_PATH_SRC bound to: 0 - type: string 
+	Parameter C_DATA_PATH_SIGN bound to: 0 - type: string 
+	Parameter C_COEF_PATH_SIGN bound to: 0 - type: string 
+	Parameter C_ACCUM_PATH_WIDTHS bound to: 38 - type: string 
+	Parameter C_OUTPUT_WIDTH bound to: 16 - type: integer 
+	Parameter C_OUTPUT_PATH_WIDTHS bound to: 16 - type: string 
+	Parameter C_ACCUM_OP_PATH_WIDTHS bound to: 38 - type: string 
+	Parameter C_EXT_MULT_CNFG bound to: none - type: string 
+	Parameter C_DATA_PATH_PSAMP_SRC bound to: 0 - type: string 
+	Parameter C_OP_PATH_PSAMP_SRC bound to: 0 - type: string 
+	Parameter C_NUM_MADDS bound to: 1 - type: integer 
+	Parameter C_OPT_MADDS bound to: none - type: string 
+	Parameter C_OVERSAMPLING_RATE bound to: 6 - type: integer 
+	Parameter C_INPUT_RATE bound to: 64 - type: integer 
+	Parameter C_OUTPUT_RATE bound to: 4096 - type: integer 
+	Parameter C_DATA_MEMTYPE bound to: 1 - type: integer 
+	Parameter C_COEF_MEMTYPE bound to: 1 - type: integer 
+	Parameter C_IPBUFF_MEMTYPE bound to: 2 - type: integer 
+	Parameter C_OPBUFF_MEMTYPE bound to: 0 - type: integer 
+	Parameter C_DATAPATH_MEMTYPE bound to: 2 - type: integer 
+	Parameter C_MEM_ARRANGEMENT bound to: 1 - type: integer 
+	Parameter C_DATA_MEM_PACKING bound to: 1 - type: integer 
+	Parameter C_COEF_MEM_PACKING bound to: 0 - type: integer 
+	Parameter C_FILTS_PACKED bound to: 0 - type: integer 
+	Parameter C_LATENCY bound to: 18 - type: integer 
+	Parameter C_HAS_ARESETn bound to: 0 - type: integer 
+	Parameter C_HAS_ACLKEN bound to: 0 - type: integer 
+	Parameter C_DATA_HAS_TLAST bound to: 0 - type: integer 
+	Parameter C_S_DATA_HAS_FIFO bound to: 1 - type: integer 
+	Parameter C_S_DATA_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_S_DATA_TDATA_WIDTH bound to: 16 - type: integer 
+	Parameter C_S_DATA_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_DATA_HAS_TREADY bound to: 0 - type: integer 
+	Parameter C_M_DATA_HAS_TUSER bound to: 0 - type: integer 
+	Parameter C_M_DATA_TDATA_WIDTH bound to: 16 - type: integer 
+	Parameter C_M_DATA_TUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_HAS_CONFIG_CHANNEL bound to: 1 - type: integer 
+	Parameter C_CONFIG_SYNC_MODE bound to: 0 - type: integer 
+	Parameter C_CONFIG_PACKET_SIZE bound to: 0 - type: integer 
+	Parameter C_CONFIG_TDATA_WIDTH bound to: 8 - type: integer 
+	Parameter C_RELOAD_TDATA_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'fir_compiler_v7_2_15' declared at '/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage2/hdl/fir_compiler_v7_2_vh_rfs.vhd:67113' bound to instance 'U0' of component 'fir_compiler_v7_2_15' [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage2/synth/lowPassStage2.vhd:205]
+INFO: [Synth 8-256] done synthesizing module 'lowPassStage2' (20#1) [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage2/synth/lowPassStage2.vhd:73]
+WARNING: [Synth 8-689] width (32) of port connection 's_axis_data_tdata' does not match port width (16) of module 'lowPassStage2' [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/new/dataProcessor.sv:143]
+WARNING: [Synth 8-689] width (32) of port connection 'm_axis_data_tdata' does not match port width (16) of module 'lowPassStage2' [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/new/dataProcessor.sv:148]
+WARNING: [Synth 8-689] width (32) of port connection 's_axis_data_tdata' does not match port width (16) of module 'lowPassStage2' [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/new/dataProcessor.sv:155]
+WARNING: [Synth 8-689] width (32) of port connection 'm_axis_data_tdata' does not match port width (16) of module 'lowPassStage2' [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/new/dataProcessor.sv:160]
+INFO: [Synth 8-6155] done synthesizing module 'dataProcessor' (21#1) [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/new/dataProcessor.sv:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 2899.555 ; gain = 191.652 ; free physical = 9909 ; free virtual = 20808
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 2914.398 ; gain = 206.496 ; free physical = 9910 ; free virtual = 20810
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 2914.398 ; gain = 206.496 ; free physical = 9910 ; free virtual = 20810
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.14 . Memory (MB): peak = 2921.336 ; gain = 0.000 ; free physical = 9890 ; free virtual = 20791
+INFO: [Netlist 29-17] Analyzing 10 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage2/constraints/fir_compiler_v7_2.xdc] for cell 'fir_stage2_i/U0'
+Finished Parsing XDC File [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage2/constraints/fir_compiler_v7_2.xdc] for cell 'fir_stage2_i/U0'
+Parsing XDC File [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage2/constraints/fir_compiler_v7_2.xdc] for cell 'fir_stage2_r/U0'
+Finished Parsing XDC File [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage2/constraints/fir_compiler_v7_2.xdc] for cell 'fir_stage2_r/U0'
+Parsing XDC File [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage1/constraints/fir_compiler_v7_2.xdc] for cell 'fir_stage1_i/U0'
+Finished Parsing XDC File [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage1/constraints/fir_compiler_v7_2.xdc] for cell 'fir_stage1_i/U0'
+Parsing XDC File [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage1/constraints/fir_compiler_v7_2.xdc] for cell 'fir_stage1_r/U0'
+Finished Parsing XDC File [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage1/constraints/fir_compiler_v7_2.xdc] for cell 'fir_stage1_r/U0'
+Parsing XDC File [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/constrs_1/new/systemConstraints.xdc]
+WARNING: [Vivado 12-584] No ports matched 'clk'. [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/constrs_1/new/systemConstraints.xdc:1]
+Finished Parsing XDC File [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/constrs_1/new/systemConstraints.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/constrs_1/new/systemConstraints.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/dataProcessor_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+Parsing XDC File [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.runs/synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/dataProcessor_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/dataProcessor_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3085.117 ; gain = 0.000 ; free physical = 9780 ; free virtual = 20696
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 10 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 10 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.08 . Memory (MB): peak = 3085.117 ; gain = 0.000 ; free physical = 9780 ; free virtual = 20695
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 3085.117 ; gain = 377.215 ; free physical = 9872 ; free virtual = 20788
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xcku11p-ffvd900-2-i
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 3085.117 ; gain = 377.215 ; free physical = 9872 ; free virtual = 20788
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for fir_stage2_i/U0. (constraint file  /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.runs/synth_1/dont_touch.xdc, line 13).
+Applied set_property KEEP_HIERARCHY = SOFT for fir_stage2_r/U0. (constraint file  /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.runs/synth_1/dont_touch.xdc, line 13).
+Applied set_property KEEP_HIERARCHY = SOFT for fir_stage1_i/U0. (constraint file  /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.runs/synth_1/dont_touch.xdc, line 16).
+Applied set_property KEEP_HIERARCHY = SOFT for fir_stage1_r/U0. (constraint file  /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.runs/synth_1/dont_touch.xdc, line 16).
+Applied set_property KEEP_HIERARCHY = SOFT for fir_stage2_r. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for fir_stage2_i. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for fir_stage1_r. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for fir_stage1_i. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 3085.117 ; gain = 377.215 ; free physical = 9872 ; free virtual = 20788
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6040] Register coef_index_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register coef_index_reg driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+INFO: [Synth 8-5779] Default cascade height of 1 will be used for BRAM '"dpt_mem:/gen_bram.gen_write_first.gen_double_reg.ram_reg"'.
+INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 16 for RAM "dpt_mem:/gen_bram.gen_write_first.gen_double_reg.ram_reg"
+INFO: [Synth 8-3971] The signal "dpt_mem:/gen_bram.gen_write_first.gen_double_reg.ram_reg" was recognized as a true dual port RAM template.
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 3085.117 ; gain = 377.215 ; free physical = 9851 ; free virtual = 20772
+---------------------------------------------------------------------------------
+INFO: [Synth 8-223] decloning instance 'fir_compiler_v7_2_15__parameterized1:/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_cntrl_signals[0].g_others.i_delay' (delay__parameterized31) to 'fir_compiler_v7_2_15__parameterized1:/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_cntrl_signals[1].g_others.i_delay'
+INFO: [Synth 8-223] decloning instance 'fir_compiler_v7_2_15__parameterized1:/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_cntrl_signals[4].g_others.i_delay' (delay__parameterized33) to 'fir_compiler_v7_2_15__parameterized1:/i_synth/g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_cntrl_signals[5].g_others.i_delay'
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 2928 (col length:192)
+BRAMs: 1200 (col length: RAMB18 192 RAMB36 96)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6040] Register coef_index_reg_rep_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-6040] Register coef_index_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+INFO: [Synth 8-5779] Default cascade height of 1 will be used for BRAM '"fir_compiler_v7_2_15__parameterized1:/i_synth/\g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_paths[0].g_mem_array[0].i_mem/g_packed.g_true_dual_port.i_mem /gen_bram.gen_write_first.gen_double_reg.ram_reg"'.
+INFO: [Synth 8-7030] Implemented Non-Cascaded Block Ram (cascade_height = 1) of width 16 for RAM "fir_compiler_v7_2_15__parameterized1:/i_synth/\g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_paths[0].g_mem_array[0].i_mem/g_packed.g_true_dual_port.i_mem /gen_bram.gen_write_first.gen_double_reg.ram_reg"
+INFO: [Synth 8-3971] The signal "fir_compiler_v7_2_15__parameterized1:/i_synth/\g_polyphase_decimation.i_polyphase_decimation/g_semi_parallel_and_smac.g_paths[0].g_mem_array[0].i_mem/g_packed.g_true_dual_port.i_mem /gen_bram.gen_write_first.gen_double_reg.ram_reg" was recognized as a true dual port RAM template.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:13 ; elapsed = 00:01:20 . Memory (MB): peak = 3093.102 ; gain = 385.199 ; free physical = 9795 ; free virtual = 20729
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:26 ; elapsed = 00:01:42 . Memory (MB): peak = 3384.336 ; gain = 676.434 ; free physical = 9267 ; free virtual = 20235
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:27 ; elapsed = 00:01:43 . Memory (MB): peak = 3391.336 ; gain = 683.434 ; free physical = 9259 ; free virtual = 20228
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:29 ; elapsed = 00:01:46 . Memory (MB): peak = 3419.383 ; gain = 711.480 ; free physical = 9222 ; free virtual = 20191
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:32 ; elapsed = 00:01:49 . Memory (MB): peak = 3431.289 ; gain = 723.387 ; free physical = 9245 ; free virtual = 20213
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:32 ; elapsed = 00:01:49 . Memory (MB): peak = 3431.289 ; gain = 723.387 ; free physical = 9245 ; free virtual = 20213
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:32 ; elapsed = 00:01:49 . Memory (MB): peak = 3431.289 ; gain = 723.387 ; free physical = 9245 ; free virtual = 20213
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:32 ; elapsed = 00:01:49 . Memory (MB): peak = 3431.289 ; gain = 723.387 ; free physical = 9245 ; free virtual = 20213
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:32 ; elapsed = 00:01:49 . Memory (MB): peak = 3431.289 ; gain = 723.387 ; free physical = 9245 ; free virtual = 20213
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:32 ; elapsed = 00:01:49 . Memory (MB): peak = 3431.289 ; gain = 723.387 ; free physical = 9245 ; free virtual = 20213
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------------+------+
+|      |Cell            |Count |
++------+----------------+------+
+|1     |BUFG            |     1|
+|2     |CARRY8          |    18|
+|3     |DSP_ALU         |    12|
+|6     |DSP_A_B_DATA    |    12|
+|8     |DSP_C_DATA      |    12|
+|10    |DSP_MULTIPLIER  |    12|
+|12    |DSP_M_DATA      |    12|
+|13    |DSP_OUTPUT      |    12|
+|15    |DSP_PREADD      |    12|
+|16    |DSP_PREADD_DATA |    12|
+|18    |LUT1            |    37|
+|19    |LUT2            |    99|
+|20    |LUT3            |   147|
+|21    |LUT4            |   174|
+|22    |LUT5            |   315|
+|23    |LUT6            |  2512|
+|24    |MUXF7           |   689|
+|25    |MUXF8           |   232|
+|26    |RAM128X1D       |    64|
+|27    |RAMB18E2        |     2|
+|28    |RAMB36E2        |     2|
+|29    |SRL16E          |   215|
+|30    |SRLC32E         |   384|
+|31    |FDRE            |  1417|
+|32    |FDSE            |    30|
+|33    |IBUF            |    38|
+|34    |OBUF            |    33|
+|35    |OBUFT           |     1|
++------+----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:32 ; elapsed = 00:01:49 . Memory (MB): peak = 3431.289 ; gain = 723.387 ; free physical = 9245 ; free virtual = 20213
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:28 ; elapsed = 00:01:44 . Memory (MB): peak = 3431.289 ; gain = 552.668 ; free physical = 9281 ; free virtual = 20249
+Synthesis Optimization Complete : Time (s): cpu = 00:01:32 ; elapsed = 00:01:49 . Memory (MB): peak = 3431.297 ; gain = 723.387 ; free physical = 9281 ; free virtual = 20249
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3431.297 ; gain = 0.000 ; free physical = 9357 ; free virtual = 20328
+INFO: [Netlist 29-17] Analyzing 1054 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3482.117 ; gain = 0.000 ; free physical = 9309 ; free virtual = 20281
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 115 instances were transformed.
+  BUFG => BUFGCE: 1 instance 
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 12 instances
+  IBUF => IBUF (IBUFCTRL, INBUF): 38 instances
+  RAM128X1D => RAM128X1D (MUXF7(x2), RAMD64E(x4)): 64 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+39 Infos, 12 Warnings, 2 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:45 ; elapsed = 00:02:03 . Memory (MB): peak = 3482.117 ; gain = 1098.012 ; free physical = 9463 ; free virtual = 20435
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint '/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.runs/synth_1/dataProcessor.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file dataProcessor_utilization_synth.rpt -pb dataProcessor_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Dec  7 00:55:47 2022...
