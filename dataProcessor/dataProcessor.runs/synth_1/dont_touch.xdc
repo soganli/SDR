@@ -3,11 +3,17 @@
 
 # XDC: new/systemConstraints.xdc
 
+# IP: ip/lowPassStage3/lowPassStage3.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==lowPassStage3 || ORIG_REF_NAME==lowPassStage3} -quiet] -quiet
+
 # IP: ip/lowPassStage2/lowPassStage2.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==lowPassStage2 || ORIG_REF_NAME==lowPassStage2} -quiet] -quiet
 
 # IP: ip/lowPassStage1/lowPassStage1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==lowPassStage1 || ORIG_REF_NAME==lowPassStage1} -quiet] -quiet
+
+# XDC: ip/lowPassStage3/constraints/fir_compiler_v7_2.xdc
+set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==lowPassStage3 || ORIG_REF_NAME==lowPassStage3} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
 
 # XDC: ip/lowPassStage2/constraints/fir_compiler_v7_2.xdc
 set_property KEEP_HIERARCHY SOFT [get_cells [split [join [get_cells -hier -filter {REF_NAME==lowPassStage2 || ORIG_REF_NAME==lowPassStage2} -quiet] {/U0 } ]/U0 ] -quiet] -quiet

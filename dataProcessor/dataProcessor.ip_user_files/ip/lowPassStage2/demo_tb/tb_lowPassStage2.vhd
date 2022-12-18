@@ -94,11 +94,6 @@ architecture tb of tb_lowPassStage2 is
   signal s_axis_data_tready              : std_logic := '1';  -- slave is ready
   signal s_axis_data_tdata               : std_logic_vector(15 downto 0) := (others => '0');  -- data payload
 
-  -- Config slave channel signals
-  signal s_axis_config_tvalid            : std_logic := '0';  -- payload is valid
-  signal s_axis_config_tready            : std_logic := '1';  -- slave is ready
-  signal s_axis_config_tdata             : std_logic_vector(7 downto 0) := (others => '0');  -- data payload
-
   -- Data master channel signals
   signal m_axis_data_tvalid              : std_logic := '0';  -- payload is valid
   signal m_axis_data_tdata               : std_logic_vector(23 downto 0) := (others => '0');  -- data payload
@@ -112,9 +107,6 @@ architecture tb of tb_lowPassStage2 is
 
   -- Data slave channel alias signals
   signal s_axis_data_tdata_data        : std_logic_vector(15 downto 0) := (others => '0');
-
-  -- Config slave channel alias signals
-  signal s_axis_config_tdata_filter_select    : std_logic_vector(1 downto 0) := (others => '0');
 
   -- Data master channel alias signals
   signal m_axis_data_tdata_data        : std_logic_vector(16 downto 0) := (others => '0');
@@ -132,9 +124,6 @@ begin
       s_axis_data_tvalid              => s_axis_data_tvalid,
       s_axis_data_tready              => s_axis_data_tready,
       s_axis_data_tdata               => s_axis_data_tdata,
-      s_axis_config_tvalid            => s_axis_config_tvalid,
-      s_axis_config_tready            => s_axis_config_tready,
-      s_axis_config_tdata             => s_axis_config_tdata,
       m_axis_data_tvalid              => m_axis_data_tvalid,
       m_axis_data_tdata               => m_axis_data_tdata
       );
@@ -194,7 +183,7 @@ begin
 
     -- Procedure to drive an impulse and let the impulse response emerge on the data master channel
     -- samples is the number of input samples to drive; default is enough for impulse response output to emerge
-    procedure drive_impulse ( samples : natural := 773 ) is
+    procedure drive_impulse ( samples : natural := 645 ) is
       variable impulse : std_logic_vector(15 downto 0);
     begin
       impulse := (others => '0');  -- initialize unused bits to zero
@@ -221,26 +210,7 @@ begin
     drive_zeros(2);  -- 2 normal input samples
     s_axis_data_tvalid <= '1';
     wait for CLOCK_PERIOD * 320;  -- provide data as fast as the core can accept it for 5 input samples worth
-    drive_zeros(764);  -- back to normal operation
-
-    -- Select a different filter coefficient set using the config slave channel
-    s_axis_data_tvalid   <= '0';
-    s_axis_config_tvalid <= '1';
-    s_axis_config_tdata  <= (others => '0');  -- clear unused bits of TDATA
-    s_axis_config_tdata(1 downto 0) <= std_logic_vector(to_unsigned(1, 2));  -- select set 1 (range 0 to 3)
-    loop
-      wait until rising_edge(aclk);
-      exit when s_axis_config_tready = '1';
-    end loop;
-    wait for T_HOLD;
-    s_axis_config_tvalid <= '0';
-
-    -- Now send a zero data packet on the data slave channel, to synchronize and consume the config channel packet
-    drive_zeros(1);
-
-    -- The filter coefficient set configuration has now taken effect.
-    -- Drive an impulse to show the new configuration.
-    drive_impulse;
+    drive_zeros(636);  -- back to normal operation
 
     -- End of test
     report "Not a real failure. Simulation finished successfully. Test completed successfully" severity failure;
@@ -284,9 +254,6 @@ begin
 
   -- Data slave channel alias signals
   s_axis_data_tdata_data        <= s_axis_data_tdata(15 downto 0);
-
-  -- Config slave channel alias signals
-  s_axis_config_tdata_filter_select   <= s_axis_config_tdata(1 downto 0);
 
   -- Data master channel alias signals: update these only when they are valid
   m_axis_data_tdata_data        <= m_axis_data_tdata(16 downto 0) when m_axis_data_tvalid = '1';

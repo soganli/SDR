@@ -41,8 +41,8 @@ logic signed [D_WIDTH-1:0]  m_axis_data_tdata_r;
 logic signed [D_WIDTH-1:0]  m_axis_data_tdata_i;
 logic                       m_axis_data_tvalid;
 
-logic        [16-1:0]       ddc_config=500;
-logic        [16-1:0]       filter_config=0;
+logic        [32-1:0]       ddc_config=30000000;
+logic        [2-1:0]        filter_config=0;
 logic                       config_valid=0;
 
 dataProcessor #(
@@ -72,18 +72,21 @@ logic data_enable;
 initial
 begin
     // MATLAB'da üretilen sinyal (matlab/signalGen.m) burada okunuyor.
-    s_axis_data_tdata_file   = $fopen("/home/soganli/git_workspace/Tbtk/firFilter/matlab/s_axis_data_tdata.txt", "r");
-    m_axis_data_tdata_r_file = $fopen("/home/soganli/git_workspace/Tbtk/firFilter/matlab/m_axis_data_tdata_r.txt", "w");
-    m_axis_data_tdata_i_file = $fopen("/home/soganli/git_workspace/Tbtk/firFilter/matlab/m_axis_data_tdata_i.txt", "w");
-    stage1_out_r_file        = $fopen("/home/soganli/git_workspace/Tbtk/firFilter/matlab/stage1_out_r.txt", "w");
-    stage1_out_i_file        = $fopen("/home/soganli/git_workspace/Tbtk/firFilter/matlab/stage1_out_i.txt", "w");
+    s_axis_data_tdata_file   = $fopen("../../../../matlab/s_axis_data_tdata.txt", "r");
+    m_axis_data_tdata_r_file = $fopen("../../../../matlab/m_axis_data_tdata_r.txt", "w");
+    m_axis_data_tdata_i_file = $fopen("../../../../matlab/m_axis_data_tdata_i.txt", "w");
+    stage1_out_r_file        = $fopen("../../../../matlab/stage1_out_r.txt", "w");
+    stage1_out_i_file        = $fopen("../../../../matlab/stage1_out_i.txt", "w");
     
     while (! $feof(s_axis_data_tdata_file)) begin //read until an "end of file" is reached.
         $fscanf(s_axis_data_tdata_file,"%d\n",s_axis_data_tdata_set[i]); 
         i = i + 1;
     end 
-    
-
+    #20;
+    a_resetn = 0;
+    #100;
+    a_resetn = 1;
+    #100;
     data_enable = 0;
     #30;
     config_valid = 1;
@@ -104,7 +107,7 @@ generate
 
     always_ff@(posedge a_clk)
     begin
-        ddc_config             <= 500;
+        ddc_config             <= 30019999;
         if(data_enable)
         begin
             data_count          <= data_count + 1;
@@ -123,10 +126,10 @@ endgenerate
 
 // Veriler dosyaya burada yazılıyor. Stage1 Filtre sonucu
 always@(posedge a_clk)
-    if(uut.s_axis_data_filtered_s1_r_v)
+    if(uut.s_axis_data_downconverted_s1_v)
     begin
-        $fwrite(stage1_out_r_file, "%d\n", uut.s_axis_data_filtered_s1_r);
-        $fwrite(stage1_out_i_file, "%d\n", uut.s_axis_data_filtered_s1_i);
+        $fwrite(stage1_out_r_file, "%d\n", uut.s_axis_data_downconverted_s1_r);
+        $fwrite(stage1_out_i_file, "%d\n", uut.s_axis_data_downconverted_s1_i);
     end
     
     

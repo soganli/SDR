@@ -1,8 +1,9 @@
 # compile verilog/system verilog design source files
 sv xil_defaultlib  \
-"../../../../dataProcessor.srcs/sources_1/new/dataProcessor.sv" \
 "../../../../dataProcessor.srcs/sources_1/new/digitalDownConverter.sv" \
+"../../../../dataProcessor.srcs/sources_1/new/dataProcessor.sv" \
 "../../../../dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv" \
+"../../../../dataProcessor.srcs/sim_1/new/digitalDownConverter_tb.sv" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"

@@ -1,6 +1,10 @@
 # compile vhdl design source files
 vhdl xil_defaultlib  \
+"../../../../dataProcessor.ip_user_files/ip/lowPassStage3/demo_tb/tb_lowPassStage3.vhd" \
+"../../../../dataProcessor.ip_user_files/ip/lowPassStage3/sim/lowPassStage3.vhd" \
+"../../../../dataProcessor.ip_user_files/ip/lowPassStage2/demo_tb/tb_lowPassStage2.vhd" \
 "../../../../dataProcessor.ip_user_files/ip/lowPassStage2/sim/lowPassStage2.vhd" \
+"../../../../dataProcessor.ip_user_files/ip/lowPassStage1/demo_tb/tb_lowPassStage1.vhd" \
 "../../../../dataProcessor.ip_user_files/ip/lowPassStage1/sim/lowPassStage1.vhd" \
 
 # Do not sort compile order

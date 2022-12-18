@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/soganli/git_workspace/SDR/dataProcessor/dataProcessor.ip_user_files/ip/lowPassStage2/demo_tb/tb_lowPassStage2.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_lowPassStage2'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/soganli/git_workspace/SDR/dataProcessor/dataProcessor.ip_user_files/ip/lowPassStage2/sim/lowPassStage2.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'lowPassStage2'

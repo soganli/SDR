@@ -1,63 +1,34 @@
 %%
-N = 768;
-CoefLength     = 16;
-FractionLength = 21;
-FS    = 100e6  / 64;
-Fpass = 1.5e3  / FS;
-Fstop = 10e3   / FS;
-Wpass = 1;
-Wstop = 1000;
+WRITE_ENABLE    = 0;
+N               = 600;
+CoefLength      = 16;
+FractionLength  = 20;
+FS              = 100e6 / 64;
+Fpass           = 12e3   / FS;
+Fstop           = 24e3  / FS;
+Wpass           = 1;
+Wstop           = 200;
 
-Hd1 = filterDesign(N-1,Fpass,Fstop,Wpass,Wstop);
-set(Hd1, 'Arithmetic', 'fixed', ...
+Hd = filterDesign(N-1,Fpass,Fstop,Wpass,Wstop);
+set(Hd, 'Arithmetic', 'fixed', ...
     'CoeffWordLength', CoefLength, ...
     'CoeffAutoScale', false, ...
     'NumFracLength', FractionLength, ...
     'Signed',         true, ...
     'FilterInternals',  'FullPrecision');
-denormalize(Hd1);
+denormalize(Hd);
+coewrite(Hd,10,'firCoefficientsS2');
 
-Hd2 = filterDesign(N-1,2*Fpass,Fstop,Wpass,Wstop);
-set(Hd2, 'Arithmetic', 'fixed', ...
-    'CoeffWordLength', CoefLength, ...
-    'CoeffAutoScale', false, ...
-    'NumFracLength', FractionLength, ...
-    'Signed',         true, ...
-    'FilterInternals',  'FullPrecision');
-denormalize(Hd2);
+if(WRITE_ENABLE)
+    coefFile = fopen('firCoefficients.mem' , 'wb');    
+    filter_data     = fi((Hd.Numerator)' , 1 , CoefLength , FractionLength);
+    data_bin = (filter_data.bin);
+    data_dec = str2num(filter_data.sdec);
+    for i = 1:N
+        fprintf(coefFile, '%s\n',  data_bin(i,:));
+    end
+    fclose(coefFile);
+end
 
-Hd3 = filterDesign(N-1,3*Fpass,Fstop,Wpass,Wstop);
-set(Hd3, 'Arithmetic', 'fixed', ...
-    'CoeffWordLength', CoefLength, ...
-    'CoeffAutoScale', false, ...
-    'NumFracLength', FractionLength, ...
-    'Signed',         true, ...
-    'FilterInternals',  'FullPrecision');
-denormalize(Hd3);
-
-Hd4 = filterDesign(N-1,4*Fpass,Fstop,Wpass,Wstop);
-set(Hd4, 'Arithmetic', 'fixed', ...
-    'CoeffWordLength', CoefLength, ...
-    'CoeffAutoScale', false, ...
-    'NumFracLength', FractionLength, ...
-    'Signed',         true, ...
-    'FilterInternals',  'FullPrecision');
-denormalize(Hd4);
-
-Hd_full = filterDesign(N-1,4*Fpass,Fstop,Wpass,Wstop);
-set(Hd_full, 'Arithmetic', 'fixed', ...
-    'CoeffWordLength', CoefLength, ...
-    'CoeffAutoScale', false, ...
-    'NumFracLength', FractionLength, ...
-    'Signed',         true, ...
-    'FilterInternals',  'FullPrecision');
-denormalize(Hd_full);
-
-Hd_full.Numerator = [Hd1.Numerator,Hd2.Numerator,Hd3.Numerator,Hd4.Numerator];
-
-coewrite(Hd_full,10,'firCoefficientsS2');
-
-plot(linspace(-FS/2,FS/2,2^16),20*log10(abs(fftshift(fft(Hd1.Numerator,2^16))))); hold on;
-plot(linspace(-FS/2,FS/2,2^16),20*log10(abs(fftshift(fft(Hd2.Numerator,2^16))))); hold on;
-plot(linspace(-FS/2,FS/2,2^16),20*log10(abs(fftshift(fft(Hd3.Numerator,2^16))))); hold on;
-plot(linspace(-FS/2,FS/2,2^16),20*log10(abs(fftshift(fft(Hd4.Numerator,2^16))))); hold off;
+figure(1)
+plot(linspace(-FS/2,FS/2,2^16),20*log10(abs(fftshift(fft(Hd.Numerator,2^16)))));

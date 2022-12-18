@@ -58,9 +58,6 @@ COMPONENT lowPassStage2
     s_axis_data_tvalid : IN STD_LOGIC;
     s_axis_data_tready : OUT STD_LOGIC;
     s_axis_data_tdata : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-    s_axis_config_tvalid : IN STD_LOGIC;
-    s_axis_config_tready : OUT STD_LOGIC;
-    s_axis_config_tdata : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
     m_axis_data_tvalid : OUT STD_LOGIC;
     m_axis_data_tdata : OUT STD_LOGIC_VECTOR(23 DOWNTO 0)
   );
@@ -77,9 +74,6 @@ your_instance_name : lowPassStage2
     s_axis_data_tvalid => s_axis_data_tvalid,
     s_axis_data_tready => s_axis_data_tready,
     s_axis_data_tdata => s_axis_data_tdata,
-    s_axis_config_tvalid => s_axis_config_tvalid,
-    s_axis_config_tready => s_axis_config_tready,
-    s_axis_config_tdata => s_axis_config_tdata,
     m_axis_data_tvalid => m_axis_data_tvalid,
     m_axis_data_tdata => m_axis_data_tdata
   );

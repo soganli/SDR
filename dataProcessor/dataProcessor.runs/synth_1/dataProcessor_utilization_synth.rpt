@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Wed Dec  7 00:55:47 2022
+| Date         : Sun Dec 18 05:41:59 2022
 | Host         : soganli-G3-3579 running 64-bit Ubuntu 18.04.6 LTS
 | Command      : report_utilization -file dataProcessor_utilization_synth.rpt -pb dataProcessor_utilization_synth.pb
 | Design       : dataProcessor
@@ -31,17 +31,17 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| CLB LUTs*                  | 3977 |     0 |    298560 |  1.33 |
-|   LUT as Logic             | 3122 |     0 |    298560 |  1.05 |
-|   LUT as Memory            |  855 |     0 |    148320 |  0.58 |
-|     LUT as Distributed RAM |  256 |     0 |           |       |
-|     LUT as Shift Register  |  599 |     0 |           |       |
-| CLB Registers              | 1447 |     0 |    597120 |  0.24 |
-|   Register as Flip Flop    | 1447 |     0 |    597120 |  0.24 |
+| CLB LUTs*                  | 1367 |     0 |    298560 |  0.46 |
+|   LUT as Logic             |  562 |     0 |    298560 |  0.19 |
+|   LUT as Memory            |  805 |     0 |    148320 |  0.54 |
+|     LUT as Distributed RAM |  160 |     0 |           |       |
+|     LUT as Shift Register  |  645 |     0 |           |       |
+| CLB Registers              | 1349 |     0 |    597120 |  0.23 |
+|   Register as Flip Flop    | 1349 |     0 |    597120 |  0.23 |
 |   Register as Latch        |    0 |     0 |    597120 |  0.00 |
-| CARRY8                     |   18 |     0 |     37320 |  0.05 |
-| F7 Muxes                   |  817 |     0 |    149280 |  0.55 |
-| F8 Muxes                   |  232 |     0 |     74640 |  0.31 |
+| CARRY8                     |   23 |     0 |     37320 |  0.06 |
+| F7 Muxes                   |   96 |     0 |    149280 |  0.06 |
+| F8 Muxes                   |    0 |     0 |     74640 |  0.00 |
 | F9 Muxes                   |    0 |     0 |     37320 |  0.00 |
 +----------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -61,8 +61,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 30    |          Yes |         Set |            - |
-| 1417  |          Yes |       Reset |            - |
+| 26    |          Yes |         Set |            - |
+| 1323  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -72,11 +72,11 @@ Table of Contents
 +-------------------+------+-------+-----------+-------+
 |     Site Type     | Used | Fixed | Available | Util% |
 +-------------------+------+-------+-----------+-------+
-| Block RAM Tile    |    3 |     0 |       600 |  0.50 |
-|   RAMB36/FIFO*    |    2 |     0 |       600 |  0.33 |
-|     RAMB36E2 only |    2 |       |           |       |
-|   RAMB18          |    2 |     0 |      1200 |  0.17 |
-|     RAMB18E2 only |    2 |       |           |       |
+| Block RAM Tile    |   44 |     0 |       600 |  7.33 |
+|   RAMB36/FIFO*    |   42 |     0 |       600 |  7.00 |
+|     RAMB36E2 only |   42 |       |           |       |
+|   RAMB18          |    4 |     0 |      1200 |  0.33 |
+|     RAMB18E2 only |    4 |       |           |       |
 | URAM              |    0 |     0 |        80 |  0.00 |
 +-------------------+------+-------+-----------+-------+
 * Note: Each Block RAM Tile only has one FIFO logic available and therefore can accommodate only one FIFO36E2 or one FIFO18E2. However, if a FIFO18E2 occupies a Block RAM Tile, that tile can still accommodate a RAMB18E2
@@ -88,8 +88,8 @@ Table of Contents
 +----------------+------+-------+-----------+-------+
 |    Site Type   | Used | Fixed | Available | Util% |
 +----------------+------+-------+-----------+-------+
-| DSPs           |   12 |     0 |      2928 |  0.41 |
-|   DSP48E2 only |   12 |       |           |       |
+| DSPs           |   17 |     0 |      2928 |  0.58 |
+|   DSP48E2 only |   17 |       |           |       |
 +----------------+------+-------+-----------+-------+
 
 
@@ -99,7 +99,7 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
-| Bonded IOB |   72 |     0 |       408 | 17.65 |
+| Bonded IOB |   88 |     0 |       408 | 21.57 |
 +------------+------+-------+-----------+-------+
 
 
@@ -161,26 +161,26 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT6     | 2512 |                 CLB |
-| FDRE     | 1417 |            Register |
-| MUXF7    |  817 |                 CLB |
+| FDRE     | 1323 |            Register |
 | SRLC32E  |  384 |                 CLB |
-| LUT5     |  315 |                 CLB |
-| RAMD64E  |  256 |                 CLB |
-| MUXF8    |  232 |                 CLB |
-| SRL16E   |  215 |                 CLB |
-| LUT4     |  174 |                 CLB |
-| LUT3     |  147 |                 CLB |
-| LUT2     |   99 |                 CLB |
-| INBUF    |   38 |                 I/O |
-| IBUFCTRL |   38 |              Others |
-| LUT1     |   37 |                 CLB |
+| SRL16E   |  261 |                 CLB |
+| LUT2     |  176 |                 CLB |
+| LUT6     |  168 |                 CLB |
+| LUT4     |  111 |                 CLB |
+| LUT3     |  101 |                 CLB |
+| RAMD64E  |   96 |                 CLB |
+| MUXF7    |   96 |                 CLB |
+| LUT5     |   94 |                 CLB |
+| RAMD32   |   64 |                 CLB |
+| INBUF    |   54 |                 I/O |
+| IBUFCTRL |   54 |              Others |
+| RAMB36E2 |   42 |            BLOCKRAM |
 | OBUF     |   33 |                 I/O |
-| FDSE     |   30 |            Register |
-| CARRY8   |   18 |                 CLB |
-| DSP48E2  |   12 |          Arithmetic |
-| RAMB36E2 |    2 |            BLOCKRAM |
-| RAMB18E2 |    2 |            BLOCKRAM |
+| FDSE     |   26 |            Register |
+| CARRY8   |   23 |                 CLB |
+| LUT1     |   19 |                 CLB |
+| DSP48E2  |   17 |          Arithmetic |
+| RAMB18E2 |    4 |            BLOCKRAM |
 | OBUFT    |    1 |                 I/O |
 | BUFGCE   |    1 |               Clock |
 +----------+------+---------------------+

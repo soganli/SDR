@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.runs/synth_1/dataProcessor.tcl"
+  variable script "/home/soganli/git_workspace/SDR/dataProcessor/dataProcessor.runs/synth_1/dataProcessor.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config  -id {[BD 41-1306]}  -suppress 
 set_msg_config  -id {[BD 41-1271]}  -suppress 
 OPTRACE "Creating in-memory project" START { }
@@ -79,29 +80,35 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.cache/wt [current_project]
-set_property parent.project_path /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.xpr [current_project]
+set_property webtalk.parent_dir /home/soganli/git_workspace/SDR/dataProcessor/dataProcessor.cache/wt [current_project]
+set_property parent.project_path /home/soganli/git_workspace/SDR/dataProcessor/dataProcessor.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
+set_property ip_output_repo /home/soganli/git_workspace/SDR/dataProcessor/dataProcessor.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-add_files /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/imports/matlab/firCoefficients.coe
-add_files /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/imports/matlab/firCoefficientsS2.coe
+add_files /home/soganli/git_workspace/SDR/dataProcessor/matlab/firCoefficientsS1.coe
+add_files /home/soganli/git_workspace/SDR/dataProcessor/matlab/firCoefficientsS2.coe
+add_files /home/soganli/git_workspace/SDR/dataProcessor/matlab/firCoefficientsS3.coe
 read_mem {
-  /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/new/firCoefficients.mem
-  /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/imports/matlab/ddcCoefficients_real.mem
-  /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/imports/matlab/ddcCoefficients_imag.mem
+  /home/soganli/git_workspace/SDR/dataProcessor/matlab/ddcCoefficients1_real.mem
+  /home/soganli/git_workspace/SDR/dataProcessor/matlab/ddcCoefficients2_imag.mem
+  /home/soganli/git_workspace/SDR/dataProcessor/matlab/ddcCoefficients2_real.mem
+  /home/soganli/git_workspace/SDR/dataProcessor/matlab/ddcCoefficients1_imag.mem
 }
 read_verilog -library xil_defaultlib -sv {
-  /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/new/digitalDownConverter.sv
-  /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/new/dataProcessor.sv
+  /home/soganli/git_workspace/SDR/dataProcessor/dataProcessor.srcs/sources_1/new/digitalDownConverter.sv
+  /home/soganli/git_workspace/SDR/dataProcessor/dataProcessor.srcs/sources_1/new/dataProcessor.sv
 }
-read_ip -quiet /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage2/lowPassStage2.xci
-set_property used_in_implementation false [get_files -all /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage2/constraints/fir_compiler_v7_2.xdc]
+read_ip -quiet /home/soganli/git_workspace/SDR/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage3/lowPassStage3.xci
+set_property used_in_implementation false [get_files -all /home/soganli/git_workspace/SDR/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage3/constraints/fir_compiler_v7_2.xdc]
 
-read_ip -quiet /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage1/lowPassStage1.xci
-set_property used_in_implementation false [get_files -all /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage1/constraints/fir_compiler_v7_2.xdc]
+read_ip -quiet /home/soganli/git_workspace/SDR/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage2/lowPassStage2.xci
+set_property used_in_implementation false [get_files -all /home/soganli/git_workspace/SDR/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage2/constraints/fir_compiler_v7_2.xdc]
+
+read_ip -quiet /home/soganli/git_workspace/SDR/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage1/lowPassStage1.xci
+set_property used_in_implementation false [get_files -all /home/soganli/git_workspace/SDR/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage1/constraints/fir_compiler_v7_2.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -112,8 +119,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/constrs_1/new/systemConstraints.xdc
-set_property used_in_implementation false [get_files /home/soganli/git_workspace/Tbtk/dataProcessor/dataProcessor.srcs/constrs_1/new/systemConstraints.xdc]
+read_xdc /home/soganli/git_workspace/SDR/dataProcessor/dataProcessor.srcs/constrs_1/new/systemConstraints.xdc
+set_property used_in_implementation false [get_files /home/soganli/git_workspace/SDR/dataProcessor/dataProcessor.srcs/constrs_1/new/systemConstraints.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
