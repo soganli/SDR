@@ -88,6 +88,7 @@ architecture tb of tb_lowPassStage3 is
 
   -- General signals
   signal aclk                            : std_logic := '0';  -- the master clock
+  signal aresetn                         : std_logic := '1';  -- synchronous active low reset
 
   -- Data slave channel signals
   signal s_axis_data_tvalid              : std_logic := '0';  -- payload is valid
@@ -129,6 +130,7 @@ begin
   dut : entity work.lowPassStage3
     port map (
       aclk                            => aclk,
+      aresetn                         => aresetn,
       s_axis_data_tvalid              => s_axis_data_tvalid,
       s_axis_data_tready              => s_axis_data_tready,
       s_axis_data_tdata               => s_axis_data_tdata,
@@ -208,7 +210,7 @@ begin
   begin
 
     -- Drive inputs T_HOLD time after rising edge of clock
-    wait until rising_edge(aclk);
+    wait until rising_edge(aclk) and aresetn = '1';
     wait for T_HOLD;
 
     -- Drive a single impulse and let the impulse response emerge
@@ -222,6 +224,15 @@ begin
     s_axis_data_tvalid <= '1';
     wait for CLOCK_PERIOD * 10240;  -- provide data as fast as the core can accept it for 5 input samples worth
     drive_zeros(124);  -- back to normal operation
+
+    -- Drive another impulse, during which demonstrate:
+    --   reset (aresetn)
+    drive_impulse(32);  -- to partway through impulse response
+    s_axis_data_tvalid <= '0';
+    aresetn <= '0';  -- assert reset (active low)
+    wait for CLOCK_PERIOD * 2;  -- hold reset active for 2 clock cycles, as recommended in FIR Compiler Datasheet
+    aresetn <= '1';  -- deassert reset
+    drive_impulse;  -- send new impulse, following reset
 
     -- Select a different filter coefficient set using the config slave channel
     s_axis_data_tvalid   <= '0';
@@ -265,7 +276,7 @@ begin
     -- Instead, check the protocol of the master DATA channel:
     -- check that the payload is valid (not X) when TVALID is high
 
-    if m_axis_data_tvalid = '1' then
+    if m_axis_data_tvalid = '1' and aresetn = '1' then
       if is_x(m_axis_data_tdata) then
         report "ERROR: m_axis_data_tdata is invalid when m_axis_data_tvalid is high" severity error;
         check_ok := false;

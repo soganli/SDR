@@ -51,5 +51,5 @@ fclose(fid2_i);
 
 
 
-subplot(311);stem(real(COEF1(1:DDC1_LEN-1)))
-subplot(312);stem(real(COEF2(1:DDC2_LEN-1)))
+subplot(311);stem(real(COEF2(1:DDC2_LEN-1)))
+subplot(312);stem(imag(COEF2(1:DDC2_LEN-1)))

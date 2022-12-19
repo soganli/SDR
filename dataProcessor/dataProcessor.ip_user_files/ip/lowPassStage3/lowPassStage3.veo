@@ -55,6 +55,7 @@
 
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 lowPassStage3 your_instance_name (
+  .aresetn(aresetn),                            // input wire aresetn
   .aclk(aclk),                                  // input wire aclk
   .s_axis_data_tvalid(s_axis_data_tvalid),      // input wire s_axis_data_tvalid
   .s_axis_data_tready(s_axis_data_tready),      // output wire s_axis_data_tready

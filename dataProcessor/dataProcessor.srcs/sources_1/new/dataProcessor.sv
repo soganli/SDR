@@ -41,7 +41,7 @@ module dataProcessor #(
     );
 
 // STAGE_CONF: 
-localparam [32-1:0] CONF_MULTIPLIER = 3518437209;   // (1/1000) Q30.39
+localparam [32-1:0] CONF_MULTIPLIER = 3518437209;   // (1/1000) Q32.45
 localparam [16-1:0] DDC1_RESOLUTION = 10000;
 localparam          TRUNCATION_NUM  = 45;
 
@@ -112,11 +112,12 @@ DDC1
 // Filtre değiştirilmek isteniyorsa matlab/firFilter.m scriptindeki Fpass,Fcut değerleri ile oynanarak yeni dosya üretilir.
 // Yeni dosyanın etki etmesi için IP tekrar açılmalı ve load coe file yapıldıktan sonra tekrar generate edilmelidir.
 // Burada data rate 1/64 oranında indirildiği için decimation 64 olarak seçilmelidir.  
-logic   signed  [D_WIDTH-1:0]     s_axis_data_filtered_s1_r  , s_axis_data_filtered_s1_i; 
+logic   signed  [D_WIDTH+8-1:0]   s_axis_data_filtered_s1_r  , s_axis_data_filtered_s1_i; 
 logic                             s_axis_data_filtered_s1_r_v, s_axis_data_filtered_s1_i_v;
 logic                             s_axis_data_tready_s1_r,s_axis_data_tready_s1_i;
 
 lowPassStage1 fir_stage1_r (
+  .aresetn(a_resetn),                                   // input wire aresetn
   .aclk(a_clk),                              // input wire aclk
   .s_axis_data_tvalid(s_axis_data_downconverted_s1_v),  // input wire s_axis_data_tvalid
   .s_axis_data_tready(s_axis_data_tready_s1_r),  // output wire s_axis_data_tready
@@ -127,6 +128,7 @@ lowPassStage1 fir_stage1_r (
 
 
 lowPassStage1 fir_stage1_i (
+  .aresetn(a_resetn),                                   // input wire aresetn
   .aclk(a_clk),                              // input wire aclk
   .s_axis_data_tvalid(s_axis_data_downconverted_s1_v),  // input wire s_axis_data_tvalid
   .s_axis_data_tready(s_axis_data_tready_s1_i),  // output wire s_axis_data_tready
@@ -147,23 +149,25 @@ lowPassStage1 fir_stage1_i (
 // Yeni dosyanın etki etmesi için IP tekrar açılmalı ve load coe file yapıldıktan sonra tekrar generate edilmelidir.
 // Burada data rate 1/64 oranında indirildiği için decimation 64 olarak seçilmelidir.  
 
-logic   signed  [D_WIDTH-1:0]     s_axis_data_filtered_s2_r  , s_axis_data_filtered_s2_i; 
+logic   signed  [D_WIDTH+8-1:0]   s_axis_data_filtered_s2_r  , s_axis_data_filtered_s2_i; 
 logic                             s_axis_data_filtered_s2_r_v, s_axis_data_filtered_s2_i_v;
 logic                             s_axis_data_tready_s2_r,s_axis_data_tready_s2_i;
 lowPassStage2 fir_stage2_r (
+  .aresetn(a_resetn),                                   // input wire aresetn
   .aclk(a_clk),                                          // input wire aclk
   .s_axis_data_tvalid(s_axis_data_filtered_s1_r_v),     // input wire s_axis_data_tvalid
   .s_axis_data_tready(s_axis_data_tready_s2_r),         // output wire s_axis_data_tready
-  .s_axis_data_tdata(s_axis_data_filtered_s1_r),        // input wire [15 : 0] s_axis_data_tdata
+  .s_axis_data_tdata($signed(s_axis_data_filtered_s1_r[D_WIDTH-1:0])),        // input wire [15 : 0] s_axis_data_tdata
   .m_axis_data_tvalid(s_axis_data_filtered_s2_r_v),     // output wire m_axis_data_tvalid
   .m_axis_data_tdata(s_axis_data_filtered_s2_r)         // output wire [15 : 0] m_axis_data_tdata
 );
 
 lowPassStage2 fir_stage2_i (
+  .aresetn(a_resetn),                                   // input wire aresetn
   .aclk(a_clk),                                          // input wire aclk
   .s_axis_data_tvalid(s_axis_data_filtered_s1_i_v),     // input wire s_axis_data_tvalid
   .s_axis_data_tready(s_axis_data_tready_s2_i),         // output wire s_axis_data_tready
-  .s_axis_data_tdata(s_axis_data_filtered_s1_i),        // input wire [15 : 0] s_axis_data_tdata
+  .s_axis_data_tdata($signed(s_axis_data_filtered_s1_i[D_WIDTH-1:0])),        // input wire [15 : 0] s_axis_data_tdata
   .m_axis_data_tvalid(s_axis_data_filtered_s2_i_v),     // output wire m_axis_data_tvalid
   .m_axis_data_tdata(s_axis_data_filtered_s2_i)         // output wire [15 : 0] m_axis_data_tdata
 );
@@ -177,8 +181,8 @@ digitalDownConverter #(
 )
 DDC2
 (
-    .s_axis_data_tdata_r(s_axis_data_filtered_s2_r),
-    .s_axis_data_tdata_i(s_axis_data_filtered_s2_i),
+    .s_axis_data_tdata_r($signed(s_axis_data_filtered_s2_r[D_WIDTH-1:0])),
+    .s_axis_data_tdata_i($signed(s_axis_data_filtered_s2_i[D_WIDTH-1:0])),
     .s_axis_data_tready(),
     .s_axis_data_tvalid(s_axis_data_filtered_s2_r_v),
     
@@ -229,6 +233,7 @@ logic                             s_axis_data_filtered_s3_r_v, s_axis_data_filte
 logic                             s_axis_data_tready_s3_r,s_axis_data_tready_s3_i;
 
 lowPassStage3 fir_stage3_r (
+  .aresetn(a_resetn),                        // input wire aresetn
   .aclk(a_clk),                                  // input wire aclk
   .s_axis_data_tvalid(s_axis_data_downconverted_s2_v),      // input wire s_axis_data_tvalid
   .s_axis_data_tready(s_axis_data_tready_s3_r),      // output wire s_axis_data_tready
@@ -241,6 +246,7 @@ lowPassStage3 fir_stage3_r (
 );
 
 lowPassStage3 fir_stage3_i (
+  .aresetn(a_resetn),                        // input wire aresetn
   .aclk(a_clk),                                  // input wire aclk
   .s_axis_data_tvalid(s_axis_data_downconverted_s2_v),      // input wire s_axis_data_tvalid
   .s_axis_data_tready(s_axis_data_tready_s3_i),      // output wire s_axis_data_tready
@@ -251,7 +257,6 @@ lowPassStage3 fir_stage3_i (
   .m_axis_data_tvalid(s_axis_data_filtered_s3_i_v),      // output wire m_axis_data_tvalid
   .m_axis_data_tdata(s_axis_data_filtered_s3_i)        // output wire [15 : 0] m_axis_data_tdata
 );
-
 
 //----- OUTPUT ASSIGNMENT-------------------------------------------------------------------------
 // Nihai sinyal output portlarına burada atanır.

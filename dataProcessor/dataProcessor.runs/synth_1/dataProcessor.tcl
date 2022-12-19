@@ -70,7 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config  -id {[BD 41-1306]}  -suppress 
 set_msg_config  -id {[BD 41-1271]}  -suppress 
 OPTRACE "Creating in-memory project" START { }
@@ -102,12 +101,15 @@ read_verilog -library xil_defaultlib -sv {
   /home/soganli/git_workspace/SDR/dataProcessor/dataProcessor.srcs/sources_1/new/dataProcessor.sv
 }
 read_ip -quiet /home/soganli/git_workspace/SDR/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage3/lowPassStage3.xci
+set_property is_enabled false [get_files -all /home/soganli/git_workspace/SDR/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage3/demo_tb/tb_lowPassStage3.vhd]
 set_property used_in_implementation false [get_files -all /home/soganli/git_workspace/SDR/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage3/constraints/fir_compiler_v7_2.xdc]
 
 read_ip -quiet /home/soganli/git_workspace/SDR/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage2/lowPassStage2.xci
+set_property is_enabled false [get_files -all /home/soganli/git_workspace/SDR/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage2/demo_tb/tb_lowPassStage2.vhd]
 set_property used_in_implementation false [get_files -all /home/soganli/git_workspace/SDR/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage2/constraints/fir_compiler_v7_2.xdc]
 
 read_ip -quiet /home/soganli/git_workspace/SDR/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage1/lowPassStage1.xci
+set_property is_enabled false [get_files -all /home/soganli/git_workspace/SDR/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage1/demo_tb/tb_lowPassStage1.vhd]
 set_property used_in_implementation false [get_files -all /home/soganli/git_workspace/SDR/dataProcessor/dataProcessor.srcs/sources_1/ip/lowPassStage1/constraints/fir_compiler_v7_2.xdc]
 
 OPTRACE "Adding files" END { }

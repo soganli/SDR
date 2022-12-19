@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Sun Dec 18 05:41:59 2022
+| Date         : Mon Dec 19 04:02:50 2022
 | Host         : soganli-G3-3579 running 64-bit Ubuntu 18.04.6 LTS
 | Command      : report_utilization -file dataProcessor_utilization_synth.rpt -pb dataProcessor_utilization_synth.pb
 | Design       : dataProcessor
@@ -31,16 +31,16 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| CLB LUTs*                  | 1367 |     0 |    298560 |  0.46 |
-|   LUT as Logic             |  562 |     0 |    298560 |  0.19 |
-|   LUT as Memory            |  805 |     0 |    148320 |  0.54 |
-|     LUT as Distributed RAM |  160 |     0 |           |       |
-|     LUT as Shift Register  |  645 |     0 |           |       |
-| CLB Registers              | 1349 |     0 |    597120 |  0.23 |
-|   Register as Flip Flop    | 1349 |     0 |    597120 |  0.23 |
+| CLB LUTs*                  | 2459 |     0 |    298560 |  0.82 |
+|   LUT as Logic             |  875 |     0 |    298560 |  0.29 |
+|   LUT as Memory            | 1584 |     0 |    148320 |  1.07 |
+|     LUT as Distributed RAM |  256 |     0 |           |       |
+|     LUT as Shift Register  | 1328 |     0 |           |       |
+| CLB Registers              | 2305 |     0 |    597120 |  0.39 |
+|   Register as Flip Flop    | 2305 |     0 |    597120 |  0.39 |
 |   Register as Latch        |    0 |     0 |    597120 |  0.00 |
-| CARRY8                     |   23 |     0 |     37320 |  0.06 |
-| F7 Muxes                   |   96 |     0 |    149280 |  0.06 |
+| CARRY8                     |   37 |     0 |     37320 |  0.10 |
+| F7 Muxes                   |  128 |     0 |    149280 |  0.09 |
 | F8 Muxes                   |    0 |     0 |     74640 |  0.00 |
 | F9 Muxes                   |    0 |     0 |     37320 |  0.00 |
 +----------------------------+------+-------+-----------+-------+
@@ -61,8 +61,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 26    |          Yes |         Set |            - |
-| 1323  |          Yes |       Reset |            - |
+| 150   |          Yes |         Set |            - |
+| 2155  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -72,11 +72,11 @@ Table of Contents
 +-------------------+------+-------+-----------+-------+
 |     Site Type     | Used | Fixed | Available | Util% |
 +-------------------+------+-------+-----------+-------+
-| Block RAM Tile    |   44 |     0 |       600 |  7.33 |
-|   RAMB36/FIFO*    |   42 |     0 |       600 |  7.00 |
-|     RAMB36E2 only |   42 |       |           |       |
-|   RAMB18          |    4 |     0 |      1200 |  0.33 |
-|     RAMB18E2 only |    4 |       |           |       |
+| Block RAM Tile    |   42 |     0 |       600 |  7.00 |
+|   RAMB36/FIFO*    |   39 |     0 |       600 |  6.50 |
+|     RAMB36E2 only |   39 |       |           |       |
+|   RAMB18          |    6 |     0 |      1200 |  0.50 |
+|     RAMB18E2 only |    6 |       |           |       |
 | URAM              |    0 |     0 |        80 |  0.00 |
 +-------------------+------+-------+-----------+-------+
 * Note: Each Block RAM Tile only has one FIFO logic available and therefore can accommodate only one FIFO36E2 or one FIFO18E2. However, if a FIFO18E2 occupies a Block RAM Tile, that tile can still accommodate a RAMB18E2
@@ -88,8 +88,8 @@ Table of Contents
 +----------------+------+-------+-----------+-------+
 |    Site Type   | Used | Fixed | Available | Util% |
 +----------------+------+-------+-----------+-------+
-| DSPs           |   17 |     0 |      2928 |  0.58 |
-|   DSP48E2 only |   17 |       |           |       |
+| DSPs           |   25 |     0 |      2928 |  0.85 |
+|   DSP48E2 only |   25 |       |           |       |
 +----------------+------+-------+-----------+-------+
 
 
@@ -161,26 +161,26 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     | 1323 |            Register |
-| SRLC32E  |  384 |                 CLB |
-| SRL16E   |  261 |                 CLB |
-| LUT2     |  176 |                 CLB |
-| LUT6     |  168 |                 CLB |
-| LUT4     |  111 |                 CLB |
-| LUT3     |  101 |                 CLB |
-| RAMD64E  |   96 |                 CLB |
-| MUXF7    |   96 |                 CLB |
-| LUT5     |   94 |                 CLB |
+| FDRE     | 2155 |            Register |
+| SRL16E   |  688 |                 CLB |
+| SRLC32E  |  640 |                 CLB |
+| LUT2     |  258 |                 CLB |
+| LUT6     |  227 |                 CLB |
+| LUT3     |  226 |                 CLB |
+| RAMD64E  |  192 |                 CLB |
+| LUT4     |  183 |                 CLB |
+| FDSE     |  150 |            Register |
+| MUXF7    |  128 |                 CLB |
+| LUT5     |  119 |                 CLB |
+| LUT1     |   95 |                 CLB |
 | RAMD32   |   64 |                 CLB |
 | INBUF    |   54 |                 I/O |
 | IBUFCTRL |   54 |              Others |
-| RAMB36E2 |   42 |            BLOCKRAM |
+| RAMB36E2 |   39 |            BLOCKRAM |
+| CARRY8   |   37 |                 CLB |
 | OBUF     |   33 |                 I/O |
-| FDSE     |   26 |            Register |
-| CARRY8   |   23 |                 CLB |
-| LUT1     |   19 |                 CLB |
-| DSP48E2  |   17 |          Arithmetic |
-| RAMB18E2 |    4 |            BLOCKRAM |
+| DSP48E2  |   25 |          Arithmetic |
+| RAMB18E2 |    6 |            BLOCKRAM |
 | OBUFT    |    1 |                 I/O |
 | BUFGCE   |    1 |               Clock |
 +----------+------+---------------------+

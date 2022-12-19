@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xcku11p-ffvd900-2-i" LaunchTime="1671331225">
+<GenRun Id="synth_1" LaunchPart="xcku11p-ffvd900-2-i" LaunchTime="1671411662">
+  <File Type="VDS-TIMINGSUMMARY" Name="dataProcessor_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="dataProcessor.dcp"/>
   <File Type="RDS-UTIL-PB" Name="dataProcessor_utilization_synth.pb"/>
-  <File Type="PA-TCL" Name="dataProcessor.tcl"/>
   <File Type="RDS-UTIL" Name="dataProcessor_utilization_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="dataProcessor_reports.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="dataProcessor_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="dataProcessor.vds"/>
+  <File Type="REPORTS-TCL" Name="dataProcessor_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="dataProcessor_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="dataProcessor.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/digitalDownConverter.sv">
@@ -26,32 +29,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/ip/lowPassStage3/lowPassStage3.xci">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/ip/lowPassStage2/lowPassStage2.xci">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../Tbtk/firFilter/firFilter.srcs/sources_1/ip/lowPassStage2/lowPassStage2.xci"/>
-        <Attr Name="ImportTime" Val="1670361462"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/ip/lowPassStage1/lowPassStage1.xci">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../Tbtk/firFilter/firFilter.srcs/sources_1/ip/lowPassStage1/lowPassStage1.xci"/>
-        <Attr Name="ImportTime" Val="1670352832"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/ip/lowPassStage3.xcix">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/lowPassStage3/lowPassStage3.xci">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -67,10 +52,28 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/ip/lowPassStage2/lowPassStage2.xci">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Tbtk/firFilter/firFilter.srcs/sources_1/ip/lowPassStage2/lowPassStage2.xci"/>
+        <Attr Name="ImportTime" Val="1670361462"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/ip/lowPassStage1.xcix">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../Tbtk/firFilter/firFilter.srcs/sources_1/ip/lowPassStage1.xcix"/>
         <Attr Name="ImportTime" Val="1670352833"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/lowPassStage1/lowPassStage1.xci">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Tbtk/firFilter/firFilter.srcs/sources_1/ip/lowPassStage1/lowPassStage1.xci"/>
+        <Attr Name="ImportTime" Val="1670352832"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>

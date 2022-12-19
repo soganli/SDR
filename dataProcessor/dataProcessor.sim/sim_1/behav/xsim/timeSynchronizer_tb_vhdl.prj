@@ -1,6 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../algorithmDev.ip_user_files/ip/timeMultplier/sim/timeMultplier.vhd" \
-
-# Do not sort compile order
-nosort
