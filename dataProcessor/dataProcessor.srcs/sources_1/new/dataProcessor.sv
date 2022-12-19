@@ -41,7 +41,7 @@ module dataProcessor #(
     );
 
 // STAGE_CONF: 
-localparam [32-1:0] CONF_MULTIPLIER = 3518437209;   // (1/1000) Q32.45
+localparam [32-1:0] CONF_MULTIPLIER = 32'd3518437209;   // (1/1000) Q32.45
 localparam [16-1:0] DDC1_RESOLUTION = 10000;
 localparam          TRUNCATION_NUM  = 45;
 
