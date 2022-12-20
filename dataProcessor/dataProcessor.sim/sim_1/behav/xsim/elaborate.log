@@ -45,7 +45,8 @@ Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_dela
 Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=65,c_xdevicef...]
 Compiling architecture synth of entity fir_compiler_v7_2_15.buff [\buff(c_xdevicefamily="kintexupl...]
 Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=0,c_xdevicefa...]
-Compiling architecture dsp48e2_v of entity unisim.DSP48E2 [\DSP48E2(amultsel="AD",mask="111...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=0,c_xdevicefa...]
+Compiling architecture dsp48e2_v of entity unisim.DSP48E2 [\DSP48E2(bmultsel="AD",mask="111...]
 Compiling architecture synth of entity fir_compiler_v7_2_15.calc [\calc(c_xdevicefamily="kintexupl...]
 Compiling architecture synth of entity fir_compiler_v7_2_15.addsub_mult_add [\addsub_mult_add(c_xdevicefamily...]
 Compiling architecture synth of entity fir_compiler_v7_2_15.addsub_mult_add [\addsub_mult_add(c_xdevicefamily...]
@@ -79,6 +80,7 @@ Compiling architecture synth of entity fir_compiler_v7_2_15.filt_mem [\filt_mem(
 Compiling architecture synth of entity fir_compiler_v7_2_15.cntrl_delay [\cntrl_delay(c_delay_len=0,c_mem...]
 Compiling architecture synth of entity fir_compiler_v7_2_15.dpr_mem [\dpr_mem(c_xdevicefamily="kintex...]
 Compiling architecture synth of entity fir_compiler_v7_2_15.wrap_buff [\wrap_buff(c_xdevicefamily="kint...]
+Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=0,c_xdevicefa...]
 Compiling architecture synth of entity fir_compiler_v7_2_15.delay [\delay(c_delay_len=0,c_xdevicefa...]
 Compiling architecture dsp48e2_v of entity unisim.DSP48E2 [\DSP48E2(amultsel="AD",mask="111...]
 Compiling architecture synth of entity fir_compiler_v7_2_15.calc [\calc(c_xdevicefamily="kintexupl...]
@@ -127,6 +129,5 @@ Compiling architecture xilinx of entity fir_compiler_v7_2_15.fir_compiler_v7_2_1
 Compiling architecture lowpassstage3_arch of entity xil_defaultlib.lowPassStage3 [lowpassstage3_default]
 Compiling module xil_defaultlib.dataProcessor
 Compiling module xil_defaultlib.dataProcessor_tb
-WARNING: [XSIM 43-3373] "/home/soganli/git_workspace/SDR/dataProcessor/dataProcessor.srcs/sim_1/new/dataProcessor_tb.sv" Line 89. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot dataProcessor_tb_behav

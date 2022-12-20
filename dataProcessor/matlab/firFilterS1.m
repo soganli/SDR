@@ -1,7 +1,7 @@
 %%
 WRITE_ENABLE    = 0;
 N               = 600;
-CoefLength      = 16;
+CoefLength      = 18;
 FractionLength  = 22;
 FS              = 100e6;
 Fpass           = 10e3  / FS;

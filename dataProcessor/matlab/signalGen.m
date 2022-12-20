@@ -3,9 +3,9 @@ clear all;
 %%Signal Generator.................................................
 WRITE_ENABLE = 0;
 
-SNR = 12;
+SNR = 120000000000000000000;
 Fs = 100e6;
-Fc = 30020100;
+Fc = 30020800;
 SampleNumber = 2^21;
 t  = 0:(1/Fs):(SampleNumber-1)/Fs;
 sig = exp(2*pi*1i*Fc*t);

@@ -26,7 +26,7 @@ parameter D_WIDTH               = 16;
 parameter B_WIDTH               = 16;
 
 
-integer i=0,s_axis_data_tdata_file,m_axis_data_tdata_r_file,m_axis_data_tdata_i_file;
+integer i=0,s_axis_data_tdata_file,m_axis_data_tdata_r_file,m_axis_data_tdata_i_file,err;
 integer stage1_out_r_file,stage1_out_i_file;
 integer stage2_out_r_file,stage2_out_i_file;
 integer stage3_out_r_file,stage3_out_i_file;
@@ -86,7 +86,7 @@ begin
     stage3_out_i_file        = $fopen("../../../../matlab/stage3_out_i.txt", "w");
             
     while (! $feof(s_axis_data_tdata_file)) begin //read until an "end of file" is reached.
-        $fscanf(s_axis_data_tdata_file,"%d\n",s_axis_data_tdata_set[i]); 
+        err=$fscanf(s_axis_data_tdata_file,"%d\n",s_axis_data_tdata_set[i]); 
         i = i + 1;
     end 
     #20;

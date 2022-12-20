@@ -102,7 +102,7 @@ architecture tb of tb_lowPassStage3 is
 
   -- Data master channel signals
   signal m_axis_data_tvalid              : std_logic := '0';  -- payload is valid
-  signal m_axis_data_tdata               : std_logic_vector(15 downto 0) := (others => '0');  -- data payload
+  signal m_axis_data_tdata               : std_logic_vector(23 downto 0) := (others => '0');  -- data payload
 
   -----------------------------------------------------------------------
   -- Aliases for AXI channel TDATA and TUSER fields
@@ -118,7 +118,7 @@ architecture tb of tb_lowPassStage3 is
   signal s_axis_config_tdata_filter_select    : std_logic_vector(1 downto 0) := (others => '0');
 
   -- Data master channel alias signals
-  signal m_axis_data_tdata_data        : std_logic_vector(15 downto 0) := (others => '0');
+  signal m_axis_data_tdata_data        : std_logic_vector(16 downto 0) := (others => '0');
 
 
 begin
@@ -300,6 +300,6 @@ begin
   s_axis_config_tdata_filter_select   <= s_axis_config_tdata(1 downto 0);
 
   -- Data master channel alias signals: update these only when they are valid
-  m_axis_data_tdata_data        <= m_axis_data_tdata(15 downto 0) when m_axis_data_tvalid = '1';
+  m_axis_data_tdata_data        <= m_axis_data_tdata(16 downto 0) when m_axis_data_tvalid = '1';
 
 end tb;
