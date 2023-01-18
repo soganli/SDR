@@ -5,7 +5,8 @@ FS = 100E6/4096;    %% SAMPLING RATE OF SYSTEM ~24 kHz
 % 1: Laughter
 % 2: Train
 % 3: Gong
-READ_EMBEDDED_FILE = 1;
+% 4: Handel
+READ_EMBEDDED_FILE = 4;
 %%
 if(READ_EMBEDDED_FILE==0)
     % Test signal has two components.
@@ -29,6 +30,9 @@ elseif(READ_EMBEDDED_FILE==2)
     sig_n = interp(y,3).*exp(-2*pi*1i*(((0+1)*1.5e3)/FS).*(0:length(y)*3-1)');
 elseif(READ_EMBEDDED_FILE==3)
     load gong;
+    sig_n = interp(y,3).*exp(-2*pi*1i*(((0+1)*1.5e3)/FS).*(0:length(y)*3-1)');
+elseif(READ_EMBEDDED_FILE==4)
+    load handel;
     sig_n = interp(y,3).*exp(-2*pi*1i*(((0+1)*1.5e3)/FS).*(0:length(y)*3-1)');
 end
 
