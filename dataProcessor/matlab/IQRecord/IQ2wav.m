@@ -4,7 +4,7 @@ if(S1 > S2)
     IND = (0:S1-1)';
 else
     IND = (0:S2-1);
-    
+end    
     %% Filter components.................................
     N               = 512;
     Wpass           = 1;
@@ -29,7 +29,7 @@ else
         Done = 0;        
     end
     
-    figure(2)
-    plot(linspace(-FS/2,FS/2,2^16),20*log10(abs(fftshift(fft((IQ_data_upconverted),2^16)))));
+    %figure(2)
+    %plot(linspace(-FS/2,FS/2,2^16),20*log10(abs(fftshift(fft((IQ_data_upconverted),2^16)))));
     
 end
