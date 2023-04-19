@@ -24,6 +24,7 @@ title('Modulated IQ signal');
 
 
 %%
+%Calculate the absolute value of IQ signal.
 %PART 1 : Calculating absolute value of the signal........
 signal_modulated_real_square = real(signal_modulated_noisy).*real(signal_modulated_noisy);
 signal_modulated_imag_square = imag(signal_modulated_noisy).*imag(signal_modulated_noisy);
@@ -36,6 +37,7 @@ title('Magnitude of Modulated Signal');
 
 %%
 %PART 2 : Envelope detector Filter Gen
+%Calculate envelope filter coefficient...
 %% Filter components.................................
 N               = 32;
 Wpass           = 1;
@@ -49,6 +51,7 @@ plot(linspace(-Fs/2,Fs/2,2^16),20*log10(abs(fftshift(fft(Hd.Numerator,2^16)))));
 title('Frequency Response of Env Filter');
 %%
 %PART 3 : Envelope detection
+%Envelope filter.
 signal_demodulated = conv(signal_modulated_abs,Hd.Numerator,'same');
 subplot(414);
 plot(signal_mod_base,       'LineWidth',2);    hold on;
